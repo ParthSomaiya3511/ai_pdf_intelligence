@@ -1,4 +1,6 @@
-from services.pdf_service import PDFService
+from services.pdf_service import (
+    PDFService
+)
 
 
 class PatternSearch:
@@ -18,6 +20,7 @@ class PatternSearch:
         results = []
 
         if not pattern.strip():
+
             return results
 
         search_terms = (
@@ -26,7 +29,9 @@ class PatternSearch:
             .split()
         )
 
-        lines = text.split("\n")
+        lines = text.split(
+            "\n"
+        )
 
         for index, line in enumerate(
             lines
@@ -34,7 +39,6 @@ class PatternSearch:
 
             line_text = (
                 line.lower()
-                .strip()
             )
 
             score = sum(
@@ -48,7 +52,7 @@ class PatternSearch:
                 results.append(
                     {
                         "line": index + 1,
-                        "text": line.strip(),
+                        "text": line,
                         "score": score
                     }
                 )

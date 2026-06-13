@@ -1,5 +1,4 @@
 import os
-import fitz
 
 from config.settings import UPLOAD_DIR
 from core.document_loader import DocumentLoader
@@ -25,8 +24,7 @@ class PDFService:
         return DocumentLoader.load_document(
             pdf_path
         )
-        
-        
+
     @staticmethod
     def get_pdf_bytes(filename):
 
